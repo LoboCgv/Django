@@ -1,0 +1,10 @@
+<h1>Lista de personas</h1>
+{% if personas %}
+    <ul>
+    {% for p in personas %}
+        <li>{{ p.nombrePersona }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
