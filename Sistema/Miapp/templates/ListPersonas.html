@@ -1,0 +1,12 @@
+<style>
+h1{color:red;}
+</style>
+<h1>{{ yo.nombrePersona }}</h1>
+{% if personas %}
+
+	{% for p in personas %}
+		{{ p.nombrePersona }}<br>
+	{% endfor %}
+{% else %}
+	No hay datos
+{% endif %}
