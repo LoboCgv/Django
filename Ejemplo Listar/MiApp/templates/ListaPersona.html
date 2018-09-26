@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <!--Aca los css-->
+    </head>
+    <body>
+        <h1>Lista de Personas</h1>
+        <div class="conteiner">
+            {% if persones %}
+                <table>
+                    <tr>
+                        <td>Codigo</td><td>Nombre</td>
+                    </tr>
+                    {% for p in persones %}
+                    <tr>
+                        <td>{{ p.codigoPersona }}</td><td>{{p.nombrePersona}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <h2>No hay personas</h2>
+            {% endif %}
+        </div>
+    </body>
+
+</html>

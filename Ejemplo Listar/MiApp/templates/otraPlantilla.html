@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <!--Aca los css-->
+    </head>
+    <body>
+        <h1>Lista de Personas</h1>
+        <div class="conteiner">
+            {% if personas %}
+                <table>
+                    <tr>
+                        <td>Codigo</td><td>Nombre</td>
+                    </tr>
+                    {% for p in personas %}
+                    <tr>
+                        <td>{{ p.codigoPersona }}</td><td>{{p.nombrePersona}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <h2>No hay personas</h2>
+            {% endif %}
+
+            {% if mascotas %}
+                <table>
+                    <tr>
+                        <td>Codigo</td><td>Nombre</td>
+                    </tr>
+                    {% for m in mascotas %}
+                    <tr>
+                        <td>{{ m.codigoMascota }}</td><td>{{m.nombreMascota}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <h2>No hay Mascotas</h2>
+            {% endif %}
+        </div>
+    </body>
+
+</html>
