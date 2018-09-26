@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link href="css/Maqueta.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="http://localhost:8000/ingresar">Ingresar Cliente</a>
+            </nav>
+        </header>
+        <div class="contenedor">
+            {% if clientes %}
+            <table>
+                <tr>
+                    <td>Codigo</td><td>Nombre</td><td>RUT</td>
+                </tr>
+                {% for c in clientes %}
+                <tr>
+                    <td>{{ c.codigoCliete}}</td><td><a href="verCliente/{{ c.codigoCliete }}">Ver</a>{{ c.nombreCliente }}</td><td>{{ c.rutCliente }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+                No hay Clientes
+            {% endif %}
+        </div>
+    </body>
+</html>

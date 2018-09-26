@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <link href="css/Maqueta.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="#">Ingresar Cliente</a>
+            </nav>
+        </header>
+        <div class="contenedor">
+            <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+        </div>
+    </body>
+</html>

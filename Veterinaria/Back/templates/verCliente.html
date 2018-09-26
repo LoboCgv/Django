@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link href="css/Maqueta.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="#">Ingresar Cliente</a>
+            </nav>
+        </header>
+        <div class="contenedor">
+            {% if cliente %}
+                {{ cliente.nombreCliente }}
+            {% else %}
+                ha ocurriso un error
+            {%endif%}
+        </div>
+    </body>
+</html>
