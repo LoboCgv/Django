@@ -1,0 +1,19 @@
+    {% load staticfiles %}
+<html>
+        <head>
+            <title>Django Girls blog</title>
+            <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+        </head>
+        <body>
+            <div class="conteiner">
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">Productos</a>
+                    <a href="#">Servicios</a>
+                    <a href="http://localhost:8000/contacto">Contacto</a>
+                </nav>
+                {% block contenido %}
+                {% endblock %}
+            </div>
+        </body>
+    </html>

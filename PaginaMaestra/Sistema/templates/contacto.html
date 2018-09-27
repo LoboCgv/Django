@@ -1,0 +1,8 @@
+{% extends 'maqueta.html' %}
+{% block contenido %}
+    Este es el contacto
+    <form id='formulario' method="post" action="">{%  csrf_token  %}
+        {{formulario.as_p}}
+        <input type="submit">
+    </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'maqueta.html' %}
+{% block contenido %}
+    {% if personas %}
+        {% for p in personas %}
+            {{ p.nombreUsuario }}
+        {%endfor%}
+    {% else %}
+        No hay Personas
+    {% endif %}
+{% endblock %}
