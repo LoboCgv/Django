@@ -1,0 +1,14 @@
+{%extends 'maqueta.html' %}
+{% block contenido %}
+<h1>Contacto</h1>
+<form method="post" action="{% url 'contacto' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="OK">
+</form>
+{% if msgs %}
+{% for m in msgs %}
+{{ m.nombre }}
+{%endfor%}
+{%endif%}
+{% endblock %}

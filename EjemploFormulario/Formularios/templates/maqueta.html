@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    </head>
+    <body>
+        <div class="contenedor">
+            <nav>
+                <a href="{% url 'contacto' %}">Contacto</a>
+            </nav>
+            {% block contenido %}
+            {% endblock%}
+        </div>
+    </body>
+</html>
