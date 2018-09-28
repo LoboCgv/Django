@@ -1,0 +1,20 @@
+{% extends "maqueta.html" %}
+{% block contenido %}
+{{ titulo }}
+{% if comentarios %}
+<table>
+    <tr>
+        <td>nombre</td><td>email</td><td>comentario</td>
+    </tr>    
+
+{% for c in comentarios %}
+<tr>
+    <td>{{ c.nombre }}</td><td>{{ c.correo }}</td><td>{{ c.mensaje }}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% else %}
+No hay elementos 
+{% endif %}
+{% endblock %}

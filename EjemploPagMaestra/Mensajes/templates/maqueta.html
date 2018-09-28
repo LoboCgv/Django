@@ -1,0 +1,15 @@
+<html>
+    <head></head>
+    <body>
+        <header>
+            <nav>
+                <a href="#">Index</a>
+                <a href="{% url 'otro' %}">Comentario</a>
+            </nav>
+        </header>
+        <div class="contenedor">
+            {% block contenido %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
