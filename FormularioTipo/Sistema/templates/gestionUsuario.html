@@ -1,0 +1,27 @@
+{% extends "maqueta.html" %}
+{% block principal %}
+<h1>Gestión de Usuarios</h1>
+<div class="listaUsuarios">
+    {% if usuarios %}
+    <table>
+        <tr>
+            <td>Nombre Usuario</td><td>Perfil</td><td></td>
+        </tr>
+        {% for u in usuarios %}
+            <tr>
+            <td>{{ u.nombreUsuario }}</td><td>{{u.perfil}}</td><td><a class="btn" href="{% url 'modificarUsuario' pk=u.nombreUsuario %}">Modificar</a><a class="btn" href="#">Eliminar</a></td>
+        </tr>
+        {%endfor%}
+    </table>
+    {% else %}
+        <label class="msg">No hay Usuarios</label>
+    {% endif %}
+</div>
+<div class="form">
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="OK">
+    </form>
+</div>
+{% endblock %}

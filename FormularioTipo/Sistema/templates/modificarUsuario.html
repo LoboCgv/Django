@@ -1,0 +1,12 @@
+{% extends "maqueta.html" %}
+{% block principal %}
+<h1>Modificar</h1>
+
+<div class="form">
+    <form method="post" action="">
+        {% csrf_token %}
+        
+        <input type="submit" value="OK">
+    </form>
+</div>
+{% endblock %}
