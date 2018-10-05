@@ -1,0 +1,17 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'gestionCliente' %}">Clientes</a>
+            <a href="{% url 'gestionMascota' %}">Mascotass</a>
+        </header>
+        <div class="contenedor">
+            {% block lista %}
+            {% endblock %}
+            {% block formulario %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

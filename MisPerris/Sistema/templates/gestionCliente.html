@@ -1,0 +1,22 @@
+{% extends "maqueta.html" %}
+{% block lista %}
+<h1>Lista de Clientes</h1>
+{% if clientes%}
+<ul>
+{% for c in clientes %}
+    <li><a href="{% url 'verCliente' pk=c.codigoCliente %}">{{ c.nombreCliente }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<h2>No hay clientes </h2>
+{% endif %}
+{% endblock%}
+
+{% block formulario %}
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Agregar Cliente">
+</form>    
+
+{% endblock %}

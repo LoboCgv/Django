@@ -1,0 +1,22 @@
+{% extends "maqueta.html" %}
+{% block lista %}
+<h1>Lista de Mascotas</h1>
+{% if mascotas%}
+<ul>
+{% for m in mascotas %}
+    <li><a href="{% url 'verMascota' pk=m.codigoMascota %}">{{ m.nombreMascota }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<h2>No hay Mascotas </h2>
+{% endif %}
+{% endblock%}
+
+{% block formulario %}
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Agregar Mascota">
+</form>    
+
+{% endblock %}
