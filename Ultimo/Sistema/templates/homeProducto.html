@@ -1,0 +1,25 @@
+{% extends "maqueta.html"%}
+{% block Lista %}
+{% if productos %}
+<table class="tabla">
+    <tr>
+        <td>Nombre Producto</td><td>Precio</td><td>Stock</td><td></td>
+    </tr>
+    {% for p in productos %}
+    <tr>
+        <td>{{ p.nombreProducto }}</td><td>{{p.precioProducto}}</td><td>{{p.stock}}</td><td></td>
+    </tr>
+    {%endfor%}
+</table>
+{% else %}
+<h2>No hay productos</h2>
+{%endif%}
+{%endblock%}
+{%block Formulario%}
+<h2>Agregar Producto</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Agregar Producto</button>
+</form>
+{%endblock%}
