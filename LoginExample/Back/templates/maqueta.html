@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+    <body>
+        <header>
+            <nav>
+                <a href="{% url 'inicio'%}">Home</a>
+                <a href="{% url 'gestionarUsuarios'%}">Usuarios</a>
+                <a href="{% url 'logout' %}">Salir</a>
+            </nav>
+        </header>
+        <section>
+            <div class="contenedor">
+                {% block Login%}
+                {% endblock %}
+                <div class="lista">
+                    {% block Lista%}
+                    {% endblock %}
+                </div>
+                <div class="formulario">
+                    {% block Formulario%}
+                    {% endblock %}
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
