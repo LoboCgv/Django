@@ -4,11 +4,11 @@
 {% if usuarios %}
 <table>
     <tr>
-        <td>Nombre Usuario</td><td>Correo</td>
+        <td>Nombre Usuario</td><td>Correo</td><td>perfil</td>
     </tr>
     {% for u in usuarios %}
     <tr>
-        <td>{{u.username}}</td><td>{{u.email}}</td>
+        <td>{{u.user.username}}</td><td>{{u.user.email}}</td><td>{{ u.perfil}}</td>
     </tr>
     {% endfor %}
 </table>

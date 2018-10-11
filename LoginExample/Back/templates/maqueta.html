@@ -2,10 +2,18 @@
     <head></head>
     <body>
         <header>
+            {% if actual %}
+            <div class="logo">Bienvenido {{actual.username}}</div>
+            {%endif%}
             <nav>
                 <a href="{% url 'inicio'%}">Home</a>
                 <a href="{% url 'gestionarUsuarios'%}">Usuarios</a>
                 <a href="{% url 'logout' %}">Salir</a>
+                {%if acciones%}
+                    {%for a in acciones%}
+                        {{ a.get("Mostrar") }}
+                    {% endfor %}
+                {%endif%}
             </nav>
         </header>
         <section>
