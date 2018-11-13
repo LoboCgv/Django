@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>ejemplo</h1>
+        {% block principal%}
+        {% endblock%}        
+    </body>
+    <script>
+        $(document).ready(function(){
+            $.ajax({url: "http://localhost:8000/Vivienda",  success: function(result){
+               // alert();
+                $("#listaViviendas").append("codigo entregado");
+                var salida=result[0].calle;
+                alert(salida);
+            }});
+           
+        })
+    </script>
+</html>
