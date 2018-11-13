@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block principal %}
-    <div id="listaViviendas">
+<select id="filtro">
+    <option value="todos">todos</option>
+    <option value="True">con patio</option>
+    <option value="False">sin patio</option>
+
+</select>    
+<div id="listaViviendas">
         
     </div>
 {% endblock %}

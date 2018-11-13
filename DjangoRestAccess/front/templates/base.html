@@ -10,12 +10,27 @@
     <script>
         $(document).ready(function(){
             $.ajax({url: "http://localhost:8000/Vivienda",  success: function(result){
-               // alert();
-                $("#listaViviendas").append("codigo entregado");
-                var salida=result[0].calle;
-                alert(salida);
+                $("#listaViviendas").append("viviendas");
+                $.each(result,function(i,items){
+                    $("#listaViviendas").append('<br>'); 
+                    $("#listaViviendas").append(result[i].calle+" "+result[i].numero);
+                    $("#listaViviendas").append('<br>'); 
+               });
             }});
-           
+        })
+        $("#filtro").change(function(){
+            var link="http://localhost:8000/Vivienda/filtro/"+$(this).val();
+           // alert(link);
+           if($(this).val()=='todos')link='http://localhost:8000/Vivienda';
+            $.ajax({url: link,  success: function(result){
+                $("#listaViviendas").append("viviendas");
+                $("#listaViviendas").html('');
+                $.each(result,function(i,items){
+                    $("#listaViviendas").append('<br>'); 
+                    $("#listaViviendas").append(result[i].calle+" "+result[i].numero);
+                    $("#listaViviendas").append('<br>'); 
+               });
+            }});
         })
     </script>
 </html>

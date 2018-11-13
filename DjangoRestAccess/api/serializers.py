@@ -3,8 +3,7 @@ from .models import Vivienda
 class ViviendaSerializer(serializers.ModelSerializer):
     class Meta:
         fields=(
-            'calle',
-            'numero',
+            '__all__'
         )
         model=Vivienda
     
