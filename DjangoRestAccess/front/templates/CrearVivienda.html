@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%block principal%}
+<h1>Formulario</h1>
+<form method="POST" id="formulario">
+        {% csrf_token %}
+    <table>
+        <tr>
+            <td>Calle</td><td><input type="text" id="calle"></td>
+        </tr>
+        <tr>
+            <td>Numero</td><td><input type="number" id="numero"></td>
+        </tr>
+        <tr>
+            <td>Habitaciones</td><td><input type="number" id="habitaciones"></td>
+        </tr>
+        <tr>
+            <td>patio</td><td><select id="patio"><option value="False">NO</option><option value="True">Si</option></select>></td>
+        </tr>
+    </table>   
+    <input type="submit" id="agregar" value="Agregar"> 
+</form>
+{% endblock %}

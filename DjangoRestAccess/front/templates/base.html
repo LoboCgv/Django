@@ -18,6 +18,9 @@
                });
             }});
         })
+
+        
+
         $("#filtro").change(function(){
             var link="http://localhost:8000/Vivienda/filtro/"+$(this).val();
            // alert(link);
@@ -32,5 +35,18 @@
                });
             }});
         })
+
+        $("#formulario").submit(function(){
+            alert("aca");
+            $.ajax({
+                url:"http://localhost:8000/Vivienda/add/",
+                type:'POST',
+                data: {'calle': $("#calle").val(),'numero':$("#numero").val(),'habitaciones':$("#habitaciones").val(),'patio':$("#patio").val()},
+                success: function (response) {
+                    alert("exito al ingresar");
+                }
+            })
+        })
+       
     </script>
 </html>

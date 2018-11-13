@@ -16,9 +16,10 @@ class ViviendaFiltro(APIView):
         viviendas=Vivienda.objects.filter(patio=filtro)
         serializer=ViviendaSerializer(viviendas,many=True)
         return Response(serializer.data)
-    def post(self,request,calle,numero,patio,habitaciones):
-        v=Vivienda(calle=calle,numero=numero,habitaciones=habitaciones,patio=patio)
-        v.save()
-        viviendas=Vivienda.objects.all()
-        serializer=ViviendaSerializer(viviendas,many=True)
-        return Response(serializer.data)
+
+    def post(self,request):
+        
+       return Response()
+       
+       
+        
